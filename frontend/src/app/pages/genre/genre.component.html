@@ -1,0 +1,40 @@
+<br/>
+<!--
+  <a class="button is-primary has-text-white" routerLink="/new-movie">+ New Movie</a>
+-->
+<br/><br/><br/>
+
+
+  <ul *ngFor="let item of movies">
+  <div class="card">
+  <div class="card-horizontal">
+      <div class="img-square-wrapper">
+        <img class="img-thumbnail" alt="Card image cap">
+      </div>
+      <div class="card-body">
+          <h4 class="card-title">{{item.title}}</h4>
+          <p class="card-text">{{item._id}}</p>
+          
+          <!--<a (click)="onView(item.title,item.title,item.genre,item.size,item.quality,item.details,item.filepath,item.sspath1,item.sspath2,item.sspath3,item.sspath4)">view</a>-->
+         <!--
+            <a [routerLink]="['/edit-movie',item._id]" class="dropdown-item">
+            Edit
+          </a>-->
+          <a  class="dropdown-item has-text-danger" [routerLink]="['/movie',item._id]">
+            View
+          </a>
+          <!--
+          [routerLink]="['/movie',item._id]"
+          -->
+            
+        </div>
+      </div>
+      <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+     
+    </div>
+    <br/>
+    </ul>
+
+

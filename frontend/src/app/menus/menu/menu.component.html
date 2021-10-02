@@ -1,0 +1,135 @@
+<br/>
+<nav *ngIf="!authService.isAdmin()" class="navbar navbar-expand-lg navbar-light bg-success mat-elevation-22">
+    <a class="navbar-brand" href="#">Movies<span class="badge badge-secondary">HUB</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="effect nav-link alert-link" routerLink="/movies" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="effect nav-link dropdown-toggle alert-link" href="#" id="navbarDropdownGenre" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Genre
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div style="background-color: rgb(124, 192, 36);">
+                        <a class="high dropdown-item" routerLink="/genre/action">Action</a>
+                        <a class="high dropdown-item" routerLink="/genre/adventure">Adventure</a>
+                        <a class="high dropdown-item" routerLink="/genre/animated">Animated</a>
+                        <a class="high dropdown-item" routerLink="/genre/comedy">Comedy</a>
+                        <a class="high dropdown-item" routerLink="/genre/crime">Crime</a>
+                        <a class="high dropdown-item" routerLink="/genre/fantasy">Fantasy</a>
+                        <a class="high dropdown-item" routerLink="/genre/horror">Horror</a>
+                        <a class="high dropdown-item" routerLink="/genre/mystery">Mystery</a>
+                        <a class="high dropdown-item" routerLink="/genre/sci-fi" >Sci-Fi</a>
+                        <a class="high dropdown-item" routerLink="/genre/romance">Romance</a>
+                        <a class="high dropdown-item" routerLink="/genre/thriller">Thriller</a>
+                    </div>
+                </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="effect nav-link dropdown-toggle alert-link" href="#" id="navbarDropdownYear" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Year
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div style="background-color: rgb(124, 192, 36);">
+                        <a class="high dropdown-item" href="#">2020</a>
+                        <a class="high dropdown-item" href="#">2019</a>
+                        <a class="high dropdown-item" href="#">2018</a>
+                    </div>
+  
+                </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="effect nav-link dropdown-toggle alert-link" href="#" id="navbarDropdownMovies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Movies
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div style="background-color: rgb(124, 192, 36);">
+                        <a class="high dropdown-item" href="#">Latest</a>
+                        <a class="high dropdown-item" href="#">Hollywood</a>
+                        <a class="high dropdown-item" href="#">Bollywood</a>
+                        <a class="high dropdown-item" href="#">Web-Series</a>
+                        <a class="high dropdown-item" href="#">TV-Shows</a>
+                    </div>
+  
+                </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="effect nav-link dropdown-toggle alert-link" href="#" id="navbarDropdownQuality" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Quality
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div style="background-color: rgb(124, 192, 36);">
+                        <a class="high dropdown-item" routerLink="/quality/480">480p</a>
+                        <a class="high dropdown-item" routerLink="/quality/720">720p</a>
+                        <a class="high dropdown-item" routerLink="/quality/1080">1080p</a>
+                    </div>
+                </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="effect nav-link dropdown-toggle alert-link" href="#" id="navbarDropdownWebSeries" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   WebSeries
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div style="background-color: rgb(124, 192, 36);">
+  
+                        <a class="high dropdown-item" href="#">Hindi Dubbed</a>
+                        <a class="high dropdown-item" href="#">English</a>
+                        <a class="high dropdown-item" href="#">Netflix</a>
+                        <a class="high dropdown-item" href="#">Amazon-Prime</a></div>
+                </div>
+            </li>
+            <li ngbDropdown class="nav-item dropdown">
+                <a ngbDropdownToggle class="effect nav-link dropdown-toggle alert-link" href="#" id="navbarDropdownSize" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Size
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div style="background-color: rgb(124, 192, 36);">
+                        <a class="high dropdown-item" routerLink="/size/0.5">500MB</a>
+                        <a class="high dropdown-item" routerLink="/size/1">1GB</a>
+                        <a class="high dropdown-item" routerLink="/size/1.5">1.5GB</a>
+                        <a class="high dropdown-item" routerLink="/size/2">2GB</a>
+                    </div>
+  
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="effect nav-link alert-link" routerLink="contactus" routerLinkActive="active">Contact us<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="authService.loggedIn()" class="effect nav-link alert-link" routerLink="/logout">Logout<span class="sr-only">(current)</span></a>
+                <a *ngIf="!authService.loggedIn()" class="effect nav-link alert-link" routerLink="/login">Login<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <div class="searchbar form-inline my-2 my-lg-0">
+            <input id="searchinput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button id="high searchbutton" class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+        </div>
+    </div>
+  </nav>
+  <nav *ngIf="authService.isAdmin()" class="navbar navbar-expand-lg navbar-light bg-success">
+    <a class="navbar-brand" href="#">Movies<span class="badge badge-secondary">HUB</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="effect nav-link" routerLink="/admin/movies">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="effect nav-link" routerLink="/admin/users">Users <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="effect nav-link" routerLink="/admin/movies">Movies <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="effect nav-link" routerLink="/logout">Logout <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+  

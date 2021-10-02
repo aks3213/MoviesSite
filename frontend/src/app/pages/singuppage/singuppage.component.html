@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-9 mx-auto">
+        <div class="card card-signin my-5 card-light bg-success">
+          <div class="card-body">
+            <h5 class="card-title text-center"><strong>Thank for joining us.</strong></h5>
+              
+            <div class="text-center">
+               <label for="uname"><strong>-:Email:-</strong></label>
+                <input #inputEmail type="text" id="uname" class="form-control" placeholder="Enter the email" required autofocus>
+                
+              </div>
+
+              <div class="text-center">
+                <label for="pwd"><strong>-:Password:-</strong></label>
+                <input #inputPassword type="password" id="pwd" class="form-control" placeholder="Enter the password" required>
+              </div>
+              <br/>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="onSignupButtonClick(inputEmail.value,inputPassword.value)">Sing Up</button>
+            </div>
+            <p class="centered-content">Already registered ?</p>
+            <a class="centered-content" routerLink="/login"><strong>login here</strong></a>
+        </div>
+      </div>
+    </div>
+</div> 

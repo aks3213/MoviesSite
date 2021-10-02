@@ -1,0 +1,2 @@
+npm install
+the above command should be executed at front-end and backend to install all the needed modules.

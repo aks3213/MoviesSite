@@ -1,0 +1,31 @@
+<br/>
+<!--
+    <a class="button is-primary has-text-white" routerLink="/new-movie">+ New Movie</a>
+-->
+<br/><br/><br/>
+
+  <ul *ngFor="let item of users">
+  <div class="card">
+  <div class="card-horizontal">
+      <div class="card-body">
+          <h4 class="card-title"><strong>Email:</strong>{{item.email}}</h4>
+          <p class="card-text"><strong>Id:</strong>{{item._id}}</p>
+            <!--
+                <a [routerLink]="['/edit-movie',item._id]" class="dropdown-item">
+                Edit
+            </a>-->
+            <a  class="dropdown-item has-text-danger" [routerLink]="['/admin/delete-user',item._id]">
+                Delete
+            </a>
+            
+        </div>
+      </div>
+      <!--
+          <div class="card-footer">
+          <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+      -->
+    </div>
+    </ul>
+
+

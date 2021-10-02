@@ -1,0 +1,130 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-secondary d-flex justify-content-between">
+    <a class="navbar-brand" href="#">Resume Generator</a>
+</nav>
+<form #invoiceForm="ngForm">
+    <div class="container-fluid pt-2 mb-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card border-secondary">
+                    <div class="card-body">
+                        <h4 class="card-title">Personal Details</h4>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" class="form-control" name="name" id="name"
+                                        [ngClass]="{'is-invalid': invoiceForm.submitted && CustName.invalid}"
+                                        [(ngModel)]="invoice.Name" #CustName="ngModel" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Current City</label>
+                                    <input type="text" class="form-control" name="currentcity" id="currentcity" row="3"
+                                        [ngClass]="{'is-invalid': invoiceForm.submitted && Address.invalid}"
+                                        [(ngModel)]="invoice.CurrentCity" #Address="ngModel" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Current 2nd City</label>
+                                    <input type="text" class="form-control" name="current2ndcity" id="current2ndcity" row="3"
+                                        [ngClass]="{'is-invalid': invoiceForm.submitted && Address.invalid}"
+                                        [(ngModel)]="invoice.Current2ndCity" #Address="ngModel" required/>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="email">Email ID</label>
+                                    <input type="email" class="form-control" name="email" id="email"
+                                        [(ngModel)]="invoice.email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactNo">Contact No.</label>
+                                    <input type="number" class="form-control" name="contactNo" id="contactNo"
+                                        [ngClass]="{'is-invalid': invoiceForm.submitted && ContactNo.invalid}"
+                                        [(ngModel)]="invoice.contactNo" #ContactNo="ngModel" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Educational Details</h4>
+                    <div class="row">
+                        <h2 class="card-title">Itermediate</h2>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="name">Year of Completion</label>
+                                <input type="number" class="form-control" name="name" id="name"
+                                    [ngClass]="{'is-invalid': invoiceForm.submitted && CustName.invalid}"
+                                    [(ngModel)]="invoice.YearOfCompletionItermediate" #CustName="ngModel" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="board">Board</label>
+                                <input type="text" class="form-control" name="currentcity" id="currentcity" row="3"
+                                    [ngClass]="{'is-invalid': invoiceForm.submitted && Address.invalid}"
+                                    [(ngModel)]="invoice.BoardItermediate" #Address="ngModel" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="performance">Performance</label>
+                                <input type="text" class="form-control" name="Performance" id="Performance" row="3"
+                                    [ngClass]="{'is-invalid': invoiceForm.submitted && Address.invalid}"
+                                    [(ngModel)]="invoice.PerformanceItermediate" #Address="ngModel" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="SchoolNameItermediate">Name of School</label>
+                                <input type="text" class="form-control" name="SchoolNameItermediate" id="SchoolNameItermediate"
+                                    [(ngModel)]="invoice.SchoolNameItermediate" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 class="card-title">Secondary</h2>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="Stream">Stream</label>
+                            <input type="Stream" class="form-control" name="Stream" id="Stream"
+                                [ngClass]="{'is-invalid': invoiceForm.submitted && CustName.invalid}"
+                                [(ngModel)]="invoice.StreamMatriculation" #CustName="ngModel" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Year of Completion</label>
+                            <input type="number" class="form-control" name="name" id="name"
+                                [ngClass]="{'is-invalid': invoiceForm.submitted && CustName.invalid}"
+                                [(ngModel)]="invoice.YearOfCompletionItermediate" #CustName="ngModel" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="BoardMatriculation">Board</label>
+                            <input type="text" class="form-control" name="BoardMatriculation" id="BoardMatriculation" row="3"
+                                [ngClass]="{'is-invalid': invoiceForm.submitted && Address.invalid}"
+                                [(ngModel)]="invoice.BoardMatriculation" #Address="ngModel" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="PerformanceMatriculation">Performance</label>
+                            <input type="text" class="form-control" name="PerformanceMatriculation" id="PerformanceMatriculation" row="3"
+                                [ngClass]="{'is-invalid': invoiceForm.submitted && Address.invalid}"
+                                [(ngModel)]="invoice.PerformanceMatriculation" #Address="ngModel" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="SchoolNameItermediate">Name of School</label>
+                            <input type="text" class="form-control" name="SchoolNameMatriculation" id="SchoolNameMatriculation"
+                                [(ngModel)]="invoice.SchoolNameMatriculation" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-secondary btn-lg btn-block"
+                    (click)="invoiceForm.valid ? generatePDF('download') : ''">Download Invoice</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block"
+                    (click)="invoiceForm.valid ? generatePDF('print') : ''">Print
+                    Invoice</button>
+                <button type="submit" class="btn btn-secondary btn-lg btn-block"
+                    (click)="invoiceForm.valid ? generatePDF() : ''">Open
+                    Invoice</button>
+            </div>
+        </div>
+    </div>
+</form>

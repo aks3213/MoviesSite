@@ -1,0 +1,2 @@
+<div *ngIf="!authService.isAdmin()"><app-movies></app-movies></div>
+<div *ngIf="authService.isAdmin()"><app-admin-movies></app-admin-movies></div>

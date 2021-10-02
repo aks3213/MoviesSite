@@ -1,0 +1,31 @@
+<br/>
+<!--
+  <a class="button is-primary has-text-white" routerLink="/new-movie">+ New Movie</a>
+-->
+<br/><br/><br/>
+
+  <ul *ngFor="let item of movies;index as i">
+      <div class="container-fluid">
+      <div class="row">
+          <div class="col-12 mt-3">
+              <div class="card">
+                  <div class="card-horizontal">
+                      <div class="img-square-wrapper">
+                          <img class="" [src]="imageUrl[i]" alt="Card image cap" [routerLink]="['/movie',item._id]" width="350" height="250">
+                      </div>
+                      <div class="card-body">
+                          <h4 class="card-title"><strong>{{item.title}}</strong></h4>
+                          <p class="card-text">{{item.details}}</p>
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br/>
+</ul>
+
+

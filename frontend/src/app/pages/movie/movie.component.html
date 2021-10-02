@@ -1,0 +1,59 @@
+<ng-container *ngIf="movie">
+<br/>
+    <br/> 
+    <h1 class="text-center">
+      <strong>
+          {{movie.title}}  ({{movie.genre}})
+      </strong>
+    </h1>
+   
+    <br/> 
+    <br/>       
+          <div class="card text-center" style="background-color: rgb(134, 190, 78);">
+            <div class="card-header">
+                <h1><strong>Sceern-Shots</strong></h1>
+            </div>
+            <div class="card-body">
+                <div class="row mb-4 justify-content-center">
+                    <div class="col-md-6 p-2 grey">
+                      <img class="rounded mx-auto d-block img-fluid" [src]="urlImage[0]"  alt="Responsive image">
+                    </div>
+                  </div>
+                <div class="row mb-4 justify-content-center">
+                    <div class="col-md-6 p-2 grey">
+                      <img class="rounded mx-auto d-block img-fluid" [src]="urlImage[1]" alt="Responsive image">
+                    </div>
+                  </div>
+                <div class="row mb-4 justify-content-center">
+                    <div class="col-md-6 p-2 grey">
+                      <img class="rounded mx-auto d-block img-fluid" [src]="urlImage[2]" alt="Responsive image">
+                    </div>
+                  </div>
+                <div class="row mb-4 justify-content-center">
+                    <div class="col-md-6 p-2 grey">
+                      <img class="rounded mx-auto d-block img-fluid" [src]="urlImage[3]" alt="Responsive image">
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+        <div class="card text-center" style="background-color: rgb(134, 190, 78);">
+            <div class="card-header">
+                <h1><strong>Details</strong></h1>
+            </div>
+            <div class="card-body">
+              <h5 class="card-text"><strong>Full Name:</strong>{{movie.title}}</h5>
+              <h5 class="card-text"><strong>deatils:</strong>{{movie.deatils}}</h5>
+              <h5 class="card-text"><strong>Release Year:</strong>2008</h5>
+              <h5 class="card-text"><strong>Size:</strong>{{movie.size}} GB</h5>
+              <h5 class="card-text"><strong>Quality:</strong>{{movie.quality}} px</h5>
+              <h5 class="card-text"><strong>Format:</strong>Mkv</h5>
+              <a href="assets\movies\1.flv" class="btn btn-primary">Download</a>
+            </div>
+          </div>    
+          <br/>
+          <br/>
+        </ng-container>
